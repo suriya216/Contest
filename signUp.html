@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <style>
+        body {
+            background-color: #26d35f;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #43c4b9;
+            border: 1px solid black;
+            border-radius: 7px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .sign-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" onsubmit="return validateForm()">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <label for="u_name">Email:</label>
+                <input type="text" id="u_name" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="pswd">Password:</label>
+                <input type="password" id="pswd" name="password" minlength="8" required>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="sign-btn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+        const emailInput = document.getElementById("u_name");
+        const passwordInput = document.getElementById("pswd");
+        const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const uppercaseRegex = /[A-Z]/;
+        const lowercaseRegex = /[a-z]/;
+        const specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+        if (!validEmailRegex.test(emailInput.value)) {
+            alert("Invalid email address! Please enter a valid email address.");
+            return false;
+        }
+        if (passwordInput.value.length < 8) {
+            alert("Password must be at least 8 characters long. Please enter a valid password.");
+            return false;
+        }
+        if (!uppercaseRegex.test(passwordInput.value) || !lowercaseRegex.test(passwordInput.value) || !specialCharRegex.test(passwordInput.value)) {
+            alert("Password must contain at least one uppercase letter, one lowercase letter, and one special character.");
+            return false;
+        }
+        alert("Successful! Your form has been submitted.");
+        return true;
+    }
+    </script>
+</body>
+</html>

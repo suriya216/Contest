@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing plans</title>
+    <style>
+        .top_msg{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .msg{
+            color: #5e54b5;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            font-weight: bolder;
+        }
+        .slider_a,
+        .slider_m{
+            color: #543c6bb4;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #5e54b5;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #5e54b5;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+        border-radius: 50%;
+        }
+        .slider_msg{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .cards{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left_card,
+        .right_card{
+            display: flex;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 180px;
+            height: 260px;
+        }
+        .l_card,
+        .r_card{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .l_top,
+        .r_top{
+            color: #543c6bb4;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .l_price,
+        .r_price{
+            color: #605f5f;
+            font-size: 32px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bolder;
+        }
+        .l_more,
+        .r_more{
+            color: #fff;
+            background-color: #5e54b5;
+        }
+        .mid_card{
+            display: flex;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 200px;
+            height: 280px;
+            background-color: #5e54b5;
+        }
+        .m_card{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .m_top{
+            color: #ffffffb4;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+        .m_price{
+            color: #ffffff;
+            font-size: 32px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bolder;
+        }
+        .m_more{
+            color: #a65aed;
+            background-color: #fff;
+        }
+        .m_send,
+        .m_allow,
+        .m_capacity{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_msg">
+        <span class="msg">Our Pricing</span>
+    </div>
+    <div class="slider_msg">
+        <span class="slider_a">Annually&nbsp;</span>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+        <span class="slider_m">&nbsp;Monthly</span>
+    </div>
+    <div class="cards">
+        <div class="left_card">
+            <div class="l_card">
+                <span class="l_top" style="margin-top: 20px;">Basic</span>
+                <span class="l_price" style="margin-top: 15px;">$199.99</span>
+                <span class="l_capacity" style="margin-top: 15px;">500 GB Storage</span>
+                <span class="l_allow" style="margin-top: 15px;">2 users Allowed</span>
+                <span class="l_send" style="margin-top: 15px;">Send up to 3 GB</span>
+                <span class="l_more" style="margin-top: 15px; padding: 5px">Learn more</span>
+            </div>
+        </div>
+        <div class="mid_card">
+            <div class="m_card">
+                <span class="m_top" style="margin-top: 20px;">Master</span>
+                <span class="m_price" style="margin-top: 15px;">$299.99</span>
+                <span class="m_capacity" style="margin-top: 15px;">1 TB Storage</span>
+                <span class="m_allow" style="margin-top: 15px;">5 users Allowed</span>
+                <span class="m_send" style="margin-top: 15px;">Send up to 10 GB</span>
+                <span class="m_more" style="margin-top: 15px; padding: 5px;">Learn more</span>
+            </div>
+        </div>
+        <div class="right_card">
+            <div class="r_card">
+                <span class="r_top" style="margin-top: 20px;">Professional</span>
+                <span class="r_price" style="margin-top: 15px;">$399.99</span>
+                <span class="r_capacity" style="margin-top: 15px;">2 TB Storage</span>
+                <span class="r_allow" style="margin-top: 15px;">10 users Allowed</span>
+                <span class="r_send" style="margin-top: 15px;">Send up to 20 GB</span>
+                <span class="r_more" style="margin-top: 15px; padding: 5px;">Learn more</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
